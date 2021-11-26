@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>about</title>
+    {% extends 'home/index.html' %}
+
+</head>
+
+
+
+<body>
+    {% block content %}
+    <header>
+        <div class="content">
+            <h1>About Us</h1>
+            <hr>
+            <h3>UAEM</h3>
+        </div>
+    </header>
+
+    {% endblock %} {% block contenido %}
+
+    <section>
+        <article>
+            <h2 align="center"> Centro Universitario UAEM Nezahualcoyotl</h2>
+            <hr>
+            <p>
+                <br>
+                <img width="250px" src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Logo_de_la_UAEMex.svg"> Esta página fue creada por estudiantes del Centro Universitario UAEM Nezahualcóyotl, de la carrera de Ingeniería en sistemas inteligentes.
+                Como ingenieros nos enfocamos en generar nuevas y mejores soluciones con fundamento en las ciencias de la computación y la inteligencia artificial, los cuales adquieran y procesen datos para encontrar soluciones innovadoras a problemas
+                actuales y futuros en cualquier sector y cualquier campo de conocimiento, como es el caso de esta página, centrada al área de la medicina donde se busca generar un impacto y consciencia sobre el tema del cáncer de mama, asimismo facilitando
+                el reconocimiento de tejidos cancerosos y sirviendo como soporte o apoyo a dicha área.
+
+
+
+
+            </p>
+
+            <h3>Alumnos</h3>
+            <p>*Guerrero Navarrete Osvaldo <br> *Reyes Rosales Nayeli
+            </p>
+            {% endblock contenido %}
+        </article>
+    </section>
+
+</body>
+
+</html>

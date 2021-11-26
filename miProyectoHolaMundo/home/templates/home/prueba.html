@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        
+        <li>
+            <a href='{% url "home:home"%}'>
+                Home
+            </a>
+        </li>
+        
+        <li>
+            <a href= '{% url "materiaSintactico"%}' >
+                Sintactico
+            </a>
+        </li>
+        
+        <li>
+            <a href='{% url "about:miFuncion"%}'>
+                About
+            </a>
+        </li>
+        <li>
+            <a href='{% url "miGrafo"%}'>
+                Grafo
+            </a>
+        </li>
+    </ul>
+    {% block contenido %}
+    <h1>Curso de Reconocimiento de patrones</h1>
+    <div>
+<table >
+    <td>
+        <table style="border: 1px solid black;">
+            <thead>
+                <tr>
+                    <th style="border: 1px solid black;">Clave</th>
+                    <th style="border: 1px solid black;">Temperatura</th>
+                    <th style="border: 1px solid black;">Color</th>
+                    <th style="border: 1px solid black;">Inflamation</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for elemento in lista %}
+                <tr>
+                    <td align="center", style="border: 1px solid black;">{{elemento.pk}}</td>
+                    {% if elemento.temperatura < 60 %}
+                    <td align="center", style="border: 1px solid rgb(247, 6, 6);">{{elemento.temperatura}}</td>
+                    {% else %}
+                    <td align="center", style="border: 1px solid black;">{{elemento.temperatura}}</td>
+                    {% endif %}
+                    <td align="center", style="border: 1px solid black;">{{elemento.color}}</td>
+                    <td align="center", style="border: 1px solid black;">{{elemento.inflamation}}</td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+    </td>
+    <td>
+        <table style="border: 1px solid black; margin:top;">
+            <thead>
+                <tr>
+                    <th align="center" style="border: 1px solid black;">Matriz</th>
+                
+                </tr>
+            </thead>
+            <tbody>
+                {% for elemento in listap %}
+          
+                <td align="center", style="border: 2px solid white;">{{elemento}}</td>
+            
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+    </td>    
+</table>
+</div>
+   
+
+    {% endblock contenido %}
+</body>
+</html>

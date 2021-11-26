@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Grafo</title>
+
+    {% extends 'home/index.html' %}
+
+</head>
+
+<body>
+    {% block content %}
+    <header>
+        <div class="content">
+            <h1>Grafo</h1>
+            <hr>
+            <h3>UAEM</h3>
+        </div>
+    </header>
+
+    {% endblock %} {% block contenido %}
+    <section>
+        <article>
+            <h2 align="center"> Proceso Del Grafo</h2>
+            <hr>
+            <p><br>A continuación se muestra el proceso para la creación del grafo, se le solicita al usuario que ingrese el umbral y posteriormente se llenará la tabla, marcando de color verde los registros que se encuentran conectados.
+            </p>
+
+            <form action="{% url 'procesaGrafo' %}" method="GET">
+                {%csrf_token%}
+                <label for="umbral">Umbral</label>
+                <input type="text" name="umbral" id="umbral">
+                <button class="btn" type="submit" name='miboton'> Iniciar procesamiento</button>
+            </form>
+
+            <br>
+            <br>
+            <table style="border: 1px solid black;">
+                <thead>
+                    <tr>
+                        <th style="border: 1px solid black;">V0</th>
+                        <th style="border: 1px solid black;">Vf</th>
+                        <th style="border: 1px solid black;">Magnitud</th>
+                        <th style="border: 1px solid black;">Conectado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for elemento in listap %}
+                    <tr>
+                        <td align="center" , style="border: 1px solid black;">{{elemento.0}}</td>
+
+                        <td align="center" , style="border: 1px solid black;">{{elemento.1}}</td>
+                        <td align="center" , style="border: 1px solid black;">{{elemento.2}}</td>
+                        {% if elemento.3 == "Si" %}
+                        <td align="center" , style="border: 1px solid rgb(247, 6, 6); background-color: #DAF7A6;">{{elemento.3}}</td>
+                        {% else %}
+                        <td align="center" , style="border: 1px solid black;">{{elemento.3}}</td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+            {% endblock contenido %}
+
+
+</body>
+
+</html>

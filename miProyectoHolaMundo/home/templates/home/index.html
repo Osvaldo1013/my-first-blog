@@ -1,0 +1,124 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width-device-width,initial-scale=1.0">
+    <title>Home RPSE</title>
+    <link rel="icon" type="image/png" href='{% static "/imagenes/favIcon.png" %}'>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+    <link href='{% static "css/plantilla.css" %}' rel="stylesheet">
+
+    <script type="text/javascript" src='{% static "js/app.js" %}'></script>
+</head>
+
+<body>
+    <nav id="navbar">
+        <div class="content">
+            <div class="logo">
+                <p>Grafos</p>
+                <!--<img src='{% static "/imagenes/logo.png" %}' alt="logotip" width="60">/-->
+            </div>
+            <div class="menu">
+
+                <a href="{% url 'home:home' %}" class="border">Home</a>
+                <a href="{% url 'sintactico' %}" class="border">Sintactico</a>
+                <a href="{% url 'grafo' %}" class="border">Grafo</a>
+                <a href="{% url 'about:about' %}" class="border">Acerca De </a>
+
+
+
+            </div>
+
+        </div>
+    </nav>
+    {% block content %}
+    <header>
+        <div class="content">
+            <h1>Octubre: Mes Del Cáncer De Mama</h1>
+            <h3>La Mejor Lucha Contra El Cáncer Es Una Detección Temprana</h3>
+        </div>
+    </header>
+
+    {% endblock %} {% block contenido %}
+    <section>
+        <article>
+            <h2 align="center">19 De Octubre. Día Internacional de lucha contra el cáncer de mama</h2>
+            <hr>
+            <p>
+                <img src=https://media2.giphy.com/media/ejawsTkYAGbNsYNbju/200w.webp?cid=ecf05e47qrkekjktxrv5i446ufb0bxeeh7cf2uwty6zwsz8r&rid=200w.webp&ct=s> Fue en 1988 cuando la Organización Mundial de la Salud (OMS) estableció el 19 de octubre como
+                el día mundial contra el cáncer de mama, y de acuerdo con cifras de dicho organismo, cada año se diagnostican 1.38 millones de nuevos casos, lo que representa un total de 458,000 fallecimientos a causa de esta enfermedad. Esta fecha pretende
+                sensibilizar a la población con un mensaje clave: la importancia de la detección precoz, a fin de mejorar el pronóstico y la supervivencia de los casos de cáncer de mama, lo cual sigue siendo la piedra angular de la lucha contra esta enfermedad.
+                Actualmente el cáncer de mama es el más frecuente en las mujeres, tanto en los países desarrollados como en desarrollo. La mayoría de las muertes por cáncer de mama se producen en los países de ingresos bajos y medianos, donde gran parte
+                de los casos se diagnostican en un estadio avanzado, sobre todo, por la escasa concienciación y las barreras que dificultan el acceso a los servicios de salud.
+
+            </p>
+
+
+            <h3>¿Qué es el cáncer de mama? </h3>
+            <p>
+                El cáncer de mama es un cáncer que se forma en las células de las mamas y puede ocurrir tanto en los hombres como en las mujeres, pero es mucho más frecuente en las mujeres, y ocurre cuando algunas células de la mama comienzan a crecer de manera anormal.
+                Estas células se dividen más rápidamente que las células sanas y continúan acumulándose, formando un bulto o tumor. Estas células pueden diseminarse (hacer metástasis) a través de la mama a los ganglios linfáticos o a otras partes del
+                cuerpo.
+            </p>
+
+            <h3>¿Cuáles son los principales síntomas del cáncer de mama?</h3>
+            <p>
+                <li>Un bulto o engrosamiento en la mama que se siente diferente del tejido que la rodea.</li>
+                <li>Cambio de tamaño, forma o aspecto de una mama.</li>
+                <li>Cambios en la piel que se encuentra sobre la mama, como formación de hoyuelos.</li>
+                <li>La inversión reciente del pezón.</li>
+                <li>Descamación, desprendimiento de la piel, formación de costras y pelado del área pigmentada de la piel que rodea el pezón (areola) o la piel de la mama.</li>
+                <li>Enrojecimiento o pequeños orificios en la piel que se encuentra sobre tu mama, como la piel de una naranja.</li>
+            </p>
+
+            <p>Descrito lo anterior se pretende hacer uso del reconocimiento de patrones sintactico estructural, y como estudiantes de la Ingeniería En Sistemas Inteligentes realizar un aporte a este problema, es por ello se pretende realizar un estudio
+                acerca del cáncer de mama, se hace uso de una base de datos donde contiene las características de los tejidos. A continuación se muestra dicha tabla, también se puede visitar el apartado llamado 'Grafo' donde se emplea el uso del reconocimiento
+                de patrones.
+            </p>
+
+
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Clave</th>
+                        <th>Temperatura</th>
+                        <th>Color</th>
+                        <th>Inflamacion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for elemento in lista %}
+                    <tr>
+                        <th>{{elemento.pk}}</th>
+                        <th>{{elemento.temperatura}}</th>
+                        <th>{{elemento.color}}</th>
+                        <th>{{elemento.inflamation}}</th>
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+            {% endblock contenido %}
+
+        </article>
+    </section>
+
+    <!--Script-->
+
+
+</body>
+
+</html>

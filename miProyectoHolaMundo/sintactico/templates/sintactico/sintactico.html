@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>sintaticoE</title>
+    {% extends 'home/index.html' %}
+
+</head>
+
+
+<body>
+    {% block content %}
+    <header>
+        <div class="content">
+            <h1>Reconocimiento De Patrones Sintáctico Estructural</h1>
+            <hr>
+        </div>
+    </header>
+
+    {% endblock %} {% block contenido %}
+
+    <section>
+        <article>
+            <h2 align="center"> ¿Qué Es El Reconocimiento De Patrones?</h2>
+            <hr>
+            <p><br>
+                <img src="https://media3.giphy.com/media/9yRMxLuRqyQ0x3jJXD/200w.webp?cid=ecf05e47keza4z4xl3spllhemx2iue553pj4qvpuy4of4ngi&rid=200w.webp&ct=s"> En este apartado se busca explicar un poco acerca de esta asignatura. El Reconocimiento De
+                Patrones se encarga de la descripción y clasificación (reconocimiento) de los procesos sobre ingeniería, computación y matemáticas relacionados con objetos físicos y/o abstractos, personas, señales, representaciones, etc., con el propósito
+                de extraer información que permita establecer propiedades de o entre conjuntos de dichos objetos. Esta ciencia trabaja con base en un conjunto previamente establecido de todos los posibles objetos (patrones) individuales a reconocer. El
+                margen de aplicaciones del reconocimiento de patrones es muy amplio, sin embargo las más importantes están relacionadas con la visión y audición por parte de una máquina, de forma análoga a los seres humanos.
+
+            </p>
+
+            <p>El objetivo principal de un sistema de reconocimiento automático de patrones es descubrir la naturaleza subyacente de un fenómeno u objeto, describiendo y seleccionado las características fundamentales que permitan clasificarlo en una categoría
+                determinada. Son diversos los campos de aplicación que puede tener el tema de esta asignatura: en seguridad, en la medicina, en la industria, en el entretenimiento, en la educación. Y las tareas las que va más orientadas son: de diagnóstico,
+                recuperación, predicciones, interpretación, identificación y clasificación de objetos. Principalmente se basa en encontrar las relaciones estructurales que guardan los objetos de estudio, utilizando la teoría de lenguajes formales. El
+                objetivo es construir una gramática que describa la estructura del universo de objetos.
+                <br>En el reconocimiento sintáctico, cada patrón se describe en términos de sus elementos básicos, y unas reglas sintácticas, llamadas gramática; en conjunto, especifican cómo se pueden generar patrones válidos de una determinada clase.
+                El problema se reduce entonces a responder si un determinado patrón pertenece al lenguaje generado por una gramática.</p>
+
+            <p>Se hace uso de Gramáticas Libres De Contexto, las cuales son una especificación para La estructura sintáctica de un lenguaje de programación. Una especificación así es muy similar a la especificación de la estructura léxica de un lenguaje
+                utilizando expresiones regulares, excepto que para una gramática libre de contexto involucra reglas de recursividad. </p>
+
+
+            {% endblock contenido %}
+
+        </article>
+
+
+        <br>
+        <br>
+    </section>
+</body>
+
+</html>
